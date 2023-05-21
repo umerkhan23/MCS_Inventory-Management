@@ -1,6 +1,7 @@
 import { useState, useEffect }  from "react";
 import { useNavigate } from "react-router";
 import LoginImg from '../assets/login.jpg';
+import Navbar from "./Navbar";
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -12,7 +13,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         // const data = {email, password};
-        if(email==="p&r@mcs.nust.edu.pk" && password ==="admin"){
+        if((email==="p&r@mcs.nust.edu.pk" || email==="comdt@mcs.nust.edu.pk")  && password ==="admin"){
             setError("");
             setEmail("");
             setPassword("");
@@ -61,6 +62,7 @@ const Login = () => {
     });
     return (
         <section class="" >
+            <Navbar></Navbar>
             <div className="w-full bg-cover p-5 opacity-70 absolute bottom-0 top-28" style={{backgroundImage:`url(${LoginImg})`}}>
             
             <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto my-20 lg:py-0">

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 import axios, {options} from "axios"
+import Navbar from "./Navbar";
 
 const AddProduct = () => {
     const [eqpt_id, setEqpt_id] = useState(1);
@@ -21,7 +22,7 @@ const AddProduct = () => {
     const [getcategories, setGetcategories] = useState([]);
 
     const getEqpt_id = async () => {
-        const response = await fetch('https://nutty-ruby-turkey.cyclic.app/api/product', {
+        const response = await fetch('http://localhost:5000/api/product', {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -129,6 +130,7 @@ const AddProduct = () => {
 
     return (
         <div className="my-2">
+            <Navbar />
             <h1 className="text-xl font-bold">Add Product</h1>
             <div>
                 <form className="" >

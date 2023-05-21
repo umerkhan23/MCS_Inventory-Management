@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Navbar from "./Navbar";
 
 const Update = () => {
     const [productSearchId, setProductSearchId] = useState();
@@ -26,7 +27,7 @@ const Update = () => {
             return;
         }
 
-        const response = await fetch(`http://localhost:5000/api/product/`, {
+        const response = await fetch(`https://nutty-ruby-turkey.cyclic.app/api/product/`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -66,7 +67,6 @@ const Update = () => {
     }
 
     const handleUpdate = async (e) => {
-
         e.preventDefault();
 
         // if (eqpt_id === 0 || eqpt_category === '' || eqpt_subcategory === '' || serial_no === '' || quantity === 0 || warranty === '' || techspec === '' || dop === '' || vendor === '' || fund === '' || amount === 0 || remarks === '' || image === '') {
@@ -109,7 +109,7 @@ const Update = () => {
         }
         console.log("ok")
         console.log(data)
-        const response = await fetch('http://localhost:5000/api/product/'+productSearchId, {
+        const response = await fetch('https://nutty-ruby-turkey.cyclic.app/api/product/'+productSearchId, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -145,6 +145,8 @@ const Update = () => {
     }
 
     return (
+        <div>
+            <Navbar />
         <div className="w-full absolute bottom-0 top-28 bg-gray-200">
             <div className="flex items-center justify-center m-4 mt-10 space-x-6">
                 <p className="w-24 text-left  ">Eqpt Id:</p>
@@ -279,7 +281,7 @@ const Update = () => {
 
 
 
-                </form>
+                </form></div>
             </div>
         </div>
     );

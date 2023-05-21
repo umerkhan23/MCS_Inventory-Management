@@ -1,8 +1,10 @@
 import addLogo from '../assets/addLogo.png';
 import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
 const New =()=>{
     return(
         <div className=''>
+            <Navbar />
             <div className="flex items-center my-20 justify-center space-x-16">
                 <Link to="/addproduct">
                     <div className="flex flex-col justify-center items-center space-y-2 hover:cursor-pointer hover:underline h-48 w-48  m-4">

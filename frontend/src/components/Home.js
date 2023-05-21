@@ -12,6 +12,7 @@ import spdataLogo from '../assets/sp-data.png';
 import MCSImg from '../assets/TajBlock.jpg';
 
 import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -26,6 +27,8 @@ const Home = () => {
         }
     });
     return (
+        <div>
+            <Navbar />
         <div className="w-full bg-cover p-5 opacity-70 absolute bottom-0 top-28" style={{backgroundImage:`url(${MCSImg})`}}>
         <div className="h-full">
 
@@ -80,7 +83,7 @@ const Home = () => {
                 </Link>
             </div>
             <div></div>
-        </div>
+        </div></div>
         </div>
     );
 }

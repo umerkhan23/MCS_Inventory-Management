@@ -1,7 +1,12 @@
+import Navbar from "./Navbar";
+
 const Condemnation = () => {
     return (
         <div>
-            <h1>commimg soon</h1>
+            <Navbar />
+        <div className="flex h-[80vh] justify-center items-center border-2">
+            <h1 className="text-2xl font-bold">Comming Soon</h1>
+        </div>
         </div>
     );
 };

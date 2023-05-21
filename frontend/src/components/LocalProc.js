@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Navbar from "./Navbar";
 
 const LocalProc = () => {
     const [searchEqptSubCategory, setSearchEqptSubCategory] = useState("");
@@ -43,6 +44,8 @@ const LocalProc = () => {
         }
     }
     return (
+        <div>
+            <Navbar />
         <div className="w-full absolute bottom-0 top-28 bg-gray-200">
             <div className="flex items-center justify-center m-4 mt-10 space-x-6">
                 <p className="w-24 text-left  ">Eqpt Name:</p>
@@ -90,7 +93,7 @@ const LocalProc = () => {
                     </tbody>
                 </table>
             </div>}
-        </div>
+        </div></div>
     );
 };
 

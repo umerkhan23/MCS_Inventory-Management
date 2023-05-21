@@ -1,4 +1,4 @@
-import React, { Component , useEffect } from 'react';
+import React, { Component , useEffect, useState } from 'react';
 import Chart from 'chart.js/auto';
 
 class BarPlot extends Component {
@@ -8,9 +8,9 @@ constructor(props) {
     this.state = {
       loading: true,
     }
+    
 
-  }
-
+  };
 
   chartRef = React.createRef();
   chartInstance = null;
@@ -18,9 +18,17 @@ constructor(props) {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ loading: false });
-      this.renderChart();
+      // this.renderChart();          
       // Do something after the loading has finished
-    }, 500);
+      console.log("Bar ",this.props.uniqueBarPlot)
+      var data  = this.props.uniqueBarPlot;
+      if(data.length >0){
+        for(var i=0; i<data.length; i++){
+          console.log("BB ", data);
+          
+      }
+    }
+    }, 1000);
 
   }
 
@@ -42,7 +50,9 @@ constructor(props) {
     if (this.chartInstance) {
       this.chartInstance.destroy();
     }
-    console.log("data ",this.props.uniqueBarPlot)
+ 
+
+    console.log("data ",this.props.productData)
     this.chartInstance = new Chart(myChartRef, {
       type: 'bar',
       data: {
@@ -88,7 +98,16 @@ constructor(props) {
   }
 
   render() {
-    return <div> <canvas ref={this.chartRef} /></div>
+    return (
+    <div> 
+    <select className='' id='select' >
+      <option value="IT">IT</option>
+      <option value="Furniture">Furniture</option>
+
+    </select>
+     <canvas ref={this.chartRef} />
+     </div>
+    )
   }
 }
 

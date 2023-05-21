@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import Navbar from "./Navbar";
 
 const Search = () => {
 
@@ -20,13 +21,12 @@ const Search = () => {
 
     const handleSearch = async (e) => {
         e.preventDefault();
-
         if (searchEqptId === 0) {
             alert("Please enter Eqpt Id");
             return;
         }
 
-        const response = await fetch(`http://localhost:5000/api/product/`, {
+        const response = await fetch(`https://nutty-ruby-turkey.cyclic.app/api/product/`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -67,8 +67,10 @@ const Search = () => {
     }
 
     return (
-        <div className="w-full absolute bottom-0 top-28 bg-gray-200">
-            <div className="flex items-center justify-center m-4 mt-10 space-x-6">
+
+        <div className="w-full absolute bottom-0 top-0 bg-gray-200">
+            <Navbar />
+            <div className="flex items-center justify-center m-4  space-x-6">
                 <p className="w-24 text-left  ">Eqpt Id:</p>
                 <input type="number" className="border-2 border-gray-500 rounded-lg w-48"
                     onChange={(e) => { setSearchEqptId(parseInt(e.target.value)) }}
@@ -185,7 +187,7 @@ const Search = () => {
                             </div>
                             <div className="space-x-24">
                                 <div className="flex my-4">
-                                    <p className="w-24 text-left ">Image:</p>
+                                    {/* <p className="w-24 text-left ">Image:</p> */}
                                 </div>
                             </div>
 

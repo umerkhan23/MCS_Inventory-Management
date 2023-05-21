@@ -32,7 +32,7 @@ function App() {
     return (
         <div className="App">
             <BrowserRouter>
-                <Navbar />
+                
                 <div>
                     <Routes>
                         <Route path="/" element={<Login />} />
